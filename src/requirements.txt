@@ -1,0 +1,13 @@
+torch
+numpy>=1.24,<2
+scipy
+scikit-image==0.22.0
+SimpleITK
+nibabel
+h5py
+matplotlib
+pandas
+opencv-python
+lungmask
+tqdm
+ipython

@@ -1,0 +1,101 @@
+# Only the three project folders are tracked at the Git repository root
+/*
+!/.gitignore
+!/README.md
+!/src/
+!/data/
+!/res/
+
+# Synology NAS metadata
+**/@eaDir/
+*@SynoEAStream
+*@SynoResource
+
+# Python / Jupyter / package builds
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+
+# Local environments, logs, caches and temporary files
+.env
+.env.*
+.DS_Store
+Thumbs.db
+**/logs/
+**/cache/
+**/caches/
+**/temp/
+**/tmp/
+**/Demo_Output/
+*.log
+*.pid
+/src/docx/
+/src/release_assets/
+
+# Experiment helpers and shell scripts are kept locally, not published
+/src/py/
+/src/SH/
+
+# Medical images, model weights and private artifacts
+*.doc
+*.docx
+*.~lock.*
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.hdf5
+*.mha
+*.mhd
+*.nrrd
+*.nii
+*.nii.gz
+*.npy
+*.npz
+*.zip
+/src/astra-airway/model/*
+!/src/astra-airway/model/.gitkeep
+
+# Empty folder placeholders only; no original CT / GT or metadata are committed
+/data/*
+!/data/.gitkeep
+!/data/raw/
+/data/raw/**
+!/data/raw/**/
+!/data/raw/**/.gitkeep
+!/data/Dataset/
+/data/Dataset/**
+!/data/Dataset/.gitkeep
+!/data/Fig/
+/data/Fig/**
+!/data/Fig/.gitkeep
+!/data/ATM26_Track1/
+/data/ATM26_Track1/**
+!/data/ATM26_Track1/**/
+!/data/ATM26_Track1/**/.gitkeep
+
+# Track only the empty result directory, never result files
+/res/*
+!/res/.gitkeep
+!/res/Demo_Output/
+/res/Demo_Output/*
+!/res/Demo_Output/.gitkeep
+
+# Old duplicate files left by previous patches are kept locally, not published
+/src/src/
+
+# Old files left in src/ after manually nesting the existing repository
+/src/.gitignore
+/src/README.md
+/src/data/
+/src/res/
+docx/
+/src/MD/
