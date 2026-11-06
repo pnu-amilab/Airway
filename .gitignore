@@ -1,6 +1,7 @@
 # Only the three project folders are tracked at the Git repository root
 /*
 !/.gitignore
+!/.gitattributes
 !/README.md
 !/src/
 !/data/
