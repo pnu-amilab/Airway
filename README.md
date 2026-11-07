@@ -204,7 +204,7 @@ ASTRA-Net/
 ## Citation
 
 ```bibtex
-@article{lee2026astra,
+@article{lee_2026_ASTRA,
   title={Discovery of Peripheral Airway Beyond Incomplete CT Annotations for Navigational Bronchoscopy},
   author={Lee, SiYeoul and Seo, MinKyung and Kim, Jiye and Lee, Hyeyun and Seong, EonSeung and Lee, DongEon and Kim, Do Hyung and Jeong, Yeon Joo and Seol, Hee Yun and Kim, MinWoo},
   journal={IEEE Transactions on Medical Imaging},
