@@ -41,7 +41,10 @@ class AWInferer:
         if not model_path.is_file(): ensure_checkpoint(model_path, self.model_name)
 
         t0 = time.perf_counter()
-        self._log(f'Model configuration | model={self.model_name} | device={self.device} | patch={self.patch_size} | overlap={self.overlap} | stride={self.patch_size-self.overlap} | edge={self.inference_edge} | batch={self.batch_size} done', t0)
+        self._log(f'Model configuration\n'
+                  f'                      model={self.model_name} | device={self.device}\n'
+                  f'                      patch={self.patch_size} | overlap={self.overlap} | stride={self.patch_size-self.overlap}\n'
+                  f'                      edge={self.inference_edge} | batch={self.batch_size} done', t0)
         self.model = self._build_model()
         state_dict = torch.load(model_path, map_location='cpu', weights_only=False)
         if isinstance(state_dict, dict) and 'model' in state_dict: state_dict = state_dict['model']

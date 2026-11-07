@@ -12,9 +12,9 @@ RELEASE_REPO = 'guhong3648/ASTRA-Net'
 RELEASE_TAG = 'v0.3.0'
 
 
-def download_release_asset(filename, destination):
+def download_release_asset(filename, destination, force=False):
     destination = Path(destination).expanduser()
-    if destination.is_file():
+    if destination.is_file() and not force:
         return destination
 
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -38,23 +38,23 @@ def download_release_asset(filename, destination):
     return destination
 
 
-def ensure_checkpoint(model_path, model_name):
+def ensure_checkpoint(model_path, model_name, force=False):
     """Reuse the local checkpoint, or download only the requested model."""
     model_path = Path(model_path).expanduser()
-    if model_path.is_file():
+    if model_path.is_file() and not force:
         return model_path
 
-    return download_release_asset(f'{model_name}_Final.pt', model_path)
+    return download_release_asset(f'{model_name}_Final.pt', model_path, force=force)
 
 
-def download_enhanced_labels(data_root='../data'):
+def download_enhanced_labels(data_root='../data', force=False):
     """Extract our enhanced annotations into data/raw/ATM26_Enhanced."""
     data_root = Path(data_root).expanduser()
     target = data_root/'raw/ATM26_Enhanced'
-    if any(target.glob('*.nrrd')):
+    if any(target.glob('*.nrrd')) and not force:
         return target
 
-    archive = download_release_asset('ATM26_Enhanced_Labels.zip', data_root/'release_assets/ATM26_Enhanced_Labels.zip')
+    archive = download_release_asset('ATM26_Enhanced_Labels.zip', data_root/'release_assets/ATM26_Enhanced_Labels.zip', force=force)
     target.mkdir(parents=True, exist_ok=True)
     with ZipFile(archive) as z:
         files = [name for name in z.namelist() if name.startswith('ATM26_Enhanced/') and name.endswith('.nrrd') and '/' not in name[len('ATM26_Enhanced/'):]]
