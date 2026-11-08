@@ -1,21 +1,38 @@
 # ASTRA-Net
 
 **Discovery of Peripheral Airway Beyond Incomplete CT Annotations for Navigational Bronchoscopy**  
-*IEEE Transactions on Medical Imaging*, 2026  
+*IEEE Transactions on Medical Imaging*, 2026
 
-3D airway segmentation from chest CT in **Hounsfield units (HU)**  
-ASTRA-Net combines CT, lung and vessel context, and positional encoding to recover peripheral airways
+ASTRA-Net is a framework for **3D airway segmentation** from chest CT in **Hounsfield units (HU)**. It combines CT intensity, lung and vessel context, and positional encoding to recover peripheral airways beyond incomplete annotations.
 
-![ASTRA-Net Architecture](fig/Architecture.jpg)  
-![Visualization](fig/Qualitative.gif)  
-![Visualization](fig/Quantitative.jpg)  
+[**PyPI**](https://pypi.org/project/astra-airway/) · [**Checkpoints & Enhanced Labels**](https://github.com/guhong3648/ASTRA-Net/releases/tag/v0.3.0) · [**Standalone Demo**](src/Demo_inference_standalone_ver.ipynb) · [**pip Demo**](src/Demo_inference_pip_ver.ipynb)
 
-[**PyPI**](https://pypi.org/project/astra-airway/) · [**Checkpoints & Enhanced labels**](https://github.com/guhong3648/ASTRA-Net/releases/tag/v0.3.0) · [**Standalone Demo**](src/Demo_inference_standalone_ver.ipynb) · [**pip Demo**](src/Demo_inference_pip_ver.ipynb)
+---
 
-> **Paper scope:**  
-> `src/src_T1/` Binary Airway Segmentation  
-> `src/src_T2/` Multi-class Segmentation (**not part of this paper**)
+### Architecture
 
+![ASTRA-Net Architecture](fig/Architecture.jpg)
+
+*Overview of the ASTRA-Net architecture and its post-optimization framework.*
+
+### Quantitative Results
+
+![Quantitative Evaluation](fig/Quantitative.jpg)
+
+*Comparison of airway segmentation accuracy and topological preservation across different methods.*
+
+### Qualitative Results
+
+![3D Airway Visualization](fig/Qualitative.gif)
+
+*3D airway segmentation comparison across multiple methods, with enlarged views highlighting peripheral airway branches.*
+
+
+---
+
+> **Paper scope**
+> - `src/src_T1/` — Binary airway segmentation (this paper)
+> - `src/src_T2/` — Multi-class segmentation (**not part of this paper**)
 ## 1. Quick start
 > **Docker Environment**
 >
