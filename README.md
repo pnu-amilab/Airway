@@ -6,12 +6,8 @@
 3D airway segmentation from chest CT in **Hounsfield units (HU)**  
 ASTRA-Net combines CT, lung and vessel context, and positional encoding to recover peripheral airways
 
-![Visualization](fig/Qualitative.gif)  
-
-
 ![ASTRA-Net Architecture](fig/Architecture.jpg)  
-
-
+![Visualization](fig/Qualitative.gif)  
 ![Visualization](fig/Quantitative.jpg)  
 
 [**PyPI**](https://pypi.org/project/astra-airway/) · [**Checkpoints & Enhanced labels**](https://github.com/guhong3648/ASTRA-Net/releases/tag/v0.3.0) · [**Standalone Demo**](src/Demo_inference_standalone_ver.ipynb) · [**pip Demo**](src/Demo_inference_pip_ver.ipynb)
