@@ -1,4 +1,4 @@
-# ASTRA-Net v
+# ASTRA-Net
 
 **Discovery of Peripheral Airway Beyond Incomplete CT Annotations for Navigational Bronchoscopy**  
 *IEEE Transactions on Medical Imaging*, 2026
