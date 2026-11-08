@@ -101,3 +101,4 @@ Thumbs.db
 docx/
 /src/MD/
 FILE_DIR*
+!/fig/
