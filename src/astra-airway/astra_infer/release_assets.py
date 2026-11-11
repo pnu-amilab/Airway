@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 
 RELEASE_REPO = 'guhong3648/ASTRA-Net'
-RELEASE_TAG = 'v0.3.0'
+RELEASE_TAG = 'v0.3.1'
 
 
 def download_release_asset(filename, destination, force=False):

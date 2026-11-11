@@ -5,7 +5,7 @@
 
 ASTRA-Net is a framework for **3D airway segmentation** from chest CT in **Hounsfield units (HU)**. It combines CT intensity, lung and vessel context, and positional encoding to recover peripheral airways beyond incomplete annotations.
 
-[**PyPI**](https://pypi.org/project/astra-airway/) · [**Checkpoints & Enhanced Labels**](https://github.com/guhong3648/ASTRA-Net/releases/tag/v0.3.0) · [**Standalone Demo**](src/Demo_inference_standalone_ver.ipynb) · [**pip Demo**](src/Demo_inference_pip_ver.ipynb)
+[**PyPI**](https://pypi.org/project/astra-airway/) · [**Checkpoints & Enhanced Labels**](https://github.com/guhong3648/ASTRA-Net/releases/tag/v0.3.1) · [**Standalone Demo**](src/Demo_inference_standalone_ver.ipynb) · [**pip Demo**](src/Demo_inference_pip_ver.ipynb)
 
 ---
 
@@ -72,7 +72,7 @@ sitk.WriteImage(aw_image, 'AW.nii.gz')
 - **ASTRA-Net:** returns `AW`, `LM` (lung mask), and `CV` (vessel context)
 - **Reference models:** return `AW` only
 
-The selected checkpoint is **downloaded automatically** from [GitHub Releases](https://github.com/guhong3648/ASTRA-Net/releases/tag/v0.3.0) if missing  
+The selected checkpoint is **downloaded automatically** from [GitHub Releases](https://github.com/guhong3648/ASTRA-Net/releases/tag/v0.3.1) if missing  
 The default pip checkpoint directory is `~/.cache/astra-airway/model/`
 
 **Available models:** `ASTRA-Net_Phase2` (default), `ASTRA-Net_Phase1`, `UNet`, `FANN`, `UDADS-Net`, `WingsNet`  
@@ -109,7 +109,7 @@ For this case, the ATM22 Enhanced label is cropped at **Z = 147:737** to match t
 ## 3. Data & preprocessing
 
 - [ATM22](https://atm22.grand-challenge.org/) / [ATM26](https://atm26.grand-challenge.org/registration/): original CT and GT, obtained from the organizers
-- [ASTRA-Net Release](https://github.com/guhong3648/ASTRA-Net/releases/tag/v0.3.0): six pretrained checkpoints and **20 Enhanced annotations**
+- [ASTRA-Net Release](https://github.com/guhong3648/ASTRA-Net/releases/tag/v0.3.1): six pretrained checkpoints and **20 Enhanced annotations**
 - Case-info CSV files for preprocessing: **included in this repository**
 
 The original CT and GT volumes are **not redistributed** here  
