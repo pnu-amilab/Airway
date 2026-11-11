@@ -16,7 +16,7 @@ from .release_assets import ensure_checkpoint
 class AWInferer:
     MODEL_NAMES = ('ASTRA-Net_Phase1', 'ASTRA-Net_Phase2', 'WingsNet', 'UNet', 'UDADS-Net', 'FANN')
 
-    def __init__(self, model_path=None, threshold=0.20, overlap=32, batch_size=32, device='cuda', align=True, lungmask_batch_size=16, lungmask_model_path=None, verbose=True, model_name='ASTRA-Net_Phase2', model_dir=None, inference_edge=65):
+    def __init__(self, model_path=None, threshold=0.20, overlap=32, batch_size=32, device='cuda', align=False, lungmask_batch_size=16, lungmask_model_path=None, verbose=True, model_name='ASTRA-Net_Phase2', model_dir=None, inference_edge=65):
         self.patch_size = 64
         self.threshold = threshold
         self.overlap = overlap
@@ -89,7 +89,7 @@ class AWInferer:
 
         t0 = time.perf_counter()
         ct_work = np.ascontiguousarray(ct[::-1] if self.align else ct)
-        self._log(f'[0/4] CT orientation alignment | shape={ct_work.shape} done', t0)
+        self._log(f'[0/4] CT input | shape={ct_work.shape} | Z flip={self.align} done', t0)
 
         lm = cv = pe_axes = None
         if self.use_context:
@@ -118,7 +118,7 @@ class AWInferer:
         t0 = time.perf_counter()
         output = {'LM':lm, 'CV':cv, 'AW':aw} if self.use_context else {'AW':aw}
         if self.align: output = {key:np.ascontiguousarray(value[::-1]) for key, value in output.items()}
-        self._log(f'Output orientation restoration | channels={list(output)} | dtype=uint8 done', t0)
+        self._log(f'Output ready | channels={list(output)} | Z flip restored={self.align} | dtype=uint8 done', t0)
         self._log(f'CT-to-AW pipeline | shape={aw.shape} done', t_total)
 
         return output

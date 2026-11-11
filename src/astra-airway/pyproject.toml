@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "astra-airway"
-version = "0.3.0"
+version = "0.3.1"
 description = "Standalone 3D airway segmentation using ASTRA-Net and reference models"
 readme = {text = "Standalone 3D airway segmentation with ASTRA-Net. Documentation: https://github.com/guhong3648/ASTRA-Net", content-type = "text/markdown"}
 requires-python = ">=3.10"
